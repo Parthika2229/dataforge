@@ -20,51 +20,6 @@ DataForge is a full end-to-end data pipeline tool built with Streamlit. Upload a
 
 ---
 
-## 🚀 Quick Start
-
-```bash
-# 1. Extract the zip and navigate in
-cd dataforge
-
-# 2. Install dependencies (once)
-pip install -r requirements.txt
-
-# 3. Launch
-streamlit run app.py
-```
-
-Opens at **http://localhost:8501**
-
-**If `streamlit` isn't found:**
-```bash
-python -m streamlit run app.py
-```
-
----
-
-## 📁 Project Structure
-
-```
-dataforge/
-├── app.py                        # Main Streamlit application (9 steps)
-├── requirements.txt              # All dependencies
-├── .streamlit/
-│   └── config.toml               # Dark teal theme
-└── modules/
-    ├── __init__.py
-    ├── ingestion.py              # CSV loading + column type profiling
-    ├── cleaning.py               # Automated cleaning pipeline
-    ├── data_profiler.py          # Deep statistical profiling (NEW)
-    ├── pii_detection.py          # PII/PHI detection + masking
-    ├── insights.py               # Quality score + smart warnings
-    ├── visualization.py          # Charts (histograms, heatmap, bar)
-    ├── anomaly_detection.py      # Isolation Forest anomaly detection (NEW)
-    ├── ml_advanced.py            # Full ML suite (7 models + SHAP + leaderboard)
-    └── report_generator.py       # PDF compliance report
-```
-
----
-
 ## 🗺️ The 9-Step Pipeline
 
 | Step | Name | What it does |
@@ -254,63 +209,6 @@ Imputation: Median
 Must mask: customer_id, email, address
 Note: High-cardinality columns (product_id) skipped in encoding
 ```
-
----
-
-## 🔧 Requirements
-
-| Library | Version | Purpose |
-|---------|---------|---------|
-| streamlit | ≥1.35 | Web UI |
-| pandas | ≥2.0 | Data processing |
-| numpy | ≥1.24 | Numerical computing |
-| scikit-learn | ≥1.3 | ML models + Isolation Forest |
-| xgboost | ≥2.0 | XGBoost model |
-| lightgbm | ≥4.0 | LightGBM model |
-| shap | ≥0.44 | Model explainability |
-| matplotlib | ≥3.7 | Charts |
-| seaborn | ≥0.13 | Statistical charts |
-| scipy | ≥1.11 | Statistics |
-| reportlab | ≥4.0 | PDF reports |
-
----
-
-## ☁️ Free Deployment
-
-### Streamlit Community Cloud (Easiest)
-1. Push this folder to a public GitHub repo
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Connect GitHub → select repo → set main file to `app.py`
-4. Deploy → get a public URL like `yourapp.streamlit.app`
-
-### Render (Alternative)
-1. Push to GitHub
-2. New Web Service on [render.com](https://render.com)
-3. Build command: `pip install -r requirements.txt`
-4. Start command: `streamlit run app.py --server.port $PORT --server.address 0.0.0.0`
-
----
-
-## 🐛 Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| `app.py not found` | Run from inside the inner `dataforge` folder |
-| `streamlit not recognized` | Use `python -m streamlit run app.py` |
-| ML error: Not enough rows | Need ≥30 rows |
-| ML error: Too many classes | Switch Task Type to Regression |
-| SHAP not available | Use Random Forest, XGBoost, or LightGBM |
-| Report button greyed out | Complete Step 4 (Privacy Shield) first |
-| R² is negative | Wrong task type or target column |
-| XGBoost not in list | `pip install xgboost` |
-| LightGBM not in list | `pip install lightgbm` |
-
----
-
-## 📄 License
-
-MIT License — free to use, modify, and distribute.
-
 ---
 
 *DataForge — Built with Streamlit · Open Source · Free forever*
