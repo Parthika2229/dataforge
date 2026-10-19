@@ -55,8 +55,6 @@ DataForge is a full end-to-end data pipeline tool built with Streamlit. Upload a
 | Cap outliers (IQR) | Sensor errors, data entry mistakes | OFF |
 | One-hot encode | Before running ML | ON |
 
-> ⚠️ **Keep outlier capping OFF** for real-world financial columns (charges, salary, revenue). High values are real data, not errors.
-
 ### Step 3 · Deep Profiler
 New in DataForge. Computes per column:
 - **Skewness** — how asymmetric the distribution is
@@ -66,8 +64,6 @@ New in DataForge. Computes per column:
 - **Outliers / Outliers %** — count of IQR outliers
 - **Shape** — Normal / Mild skew / Heavy skew
 - **Entropy** (categorical) — how diverse the values are
-
-Automatically flags issues: high missing %, constant columns, ID-like columns, heavily skewed distributions.
 
 ### Step 4 · Privacy Shield
 
