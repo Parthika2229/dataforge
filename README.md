@@ -88,8 +88,6 @@ New in DataForge. Computes per column:
 | Tokenize | `TOKEN_0042` | Internal use, re-identification possible |
 | Partial Mask | `Jo****oe` | UI display |
 
-> To reach HIPAA/GDPR 80+: mask PHI columns (ICD, NPI, diagnosis) with Hash, and PII columns (name, age, email) with Redact.
-
 ### Step 5 · Smart Insights
 
 Quality score measures 4 dimensions:
@@ -100,12 +98,6 @@ Quality score measures 4 dimensions:
 | Uniqueness | 20 | % non-duplicate rows |
 | Consistency | 20 | % snake_case column names |
 | Validity | 20 | % non-constant columns |
-
-**Common warnings:**
-- `sex_male & sex_female correlated 1.00` → Normal, always happens with one-hot encoding. Ignore.
-- `smoker_yes & smoker_no correlated 1.00` → Same. Ignore.
-- `Column has X extreme outliers` → Only worry if >10% of rows
-- `Column had 70%+ missing` → Consider dropping the column
 
 ### Step 6 · Visualize
 
